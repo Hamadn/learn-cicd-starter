@@ -31,7 +31,7 @@ func TestGetApiKey(t *testing.T) {
 				t.Fatalf("%s: key: expected %q, got %q", tc.name, tc.want, gotKey)
 			}
 			if tc.wantErr == nil || gotErr == nil {
-				if gotErr == tc.wantErr {
+				if gotErr != tc.wantErr {
 					t.Fatalf("%s: err: expected %v, got %v", tc.name, tc.wantErr, gotErr)
 				}
 			} else if gotErr.Error() != tc.wantErr.Error() {
